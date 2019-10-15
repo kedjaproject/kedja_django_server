@@ -1,0 +1,9 @@
+/cache
+/venv
+/static
+/volumes
+
+__pycache__
+.idea
+.sass-cache
+*.pyc

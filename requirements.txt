@@ -1,0 +1,11 @@
+Django>=2.0,<3.0
+psycopg2-binary>=2.7,<3.0
+
+django-cors-headers
+gunicorn
+python-social-auth
+pyyaml
+social-auth-app-django
+djangorestframework
+markdown
+django-filter

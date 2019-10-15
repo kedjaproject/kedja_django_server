@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  db:
+    build: ./db
+    volumes:
+      - ./volumes/postgres:/var/lib/postgresql/data
+  web:
+    build: .
+    image: kedja_django
+    environment:
+      DEBUG: 1
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./src:/app/src
+      - ./etc:/app/etc
+      - ./volumes/media:/app/media
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
