@@ -5,6 +5,12 @@ from django.db.models.fields.related import RECURSIVE_RELATIONSHIP_CONSTANT
 from core.models import UserRole
 
 
+class WALL_ROLES:
+    OWNER = 1
+    CONTRIBUTOR = 2
+    GUEST = 3
+
+
 class Wall(models.Model):
     title = models.CharField('Title', max_length=200)
 #    slug = models.SlugField(help_text='Undvik att ändra detta, eftersom det påverkar webbadressen', unique=True)

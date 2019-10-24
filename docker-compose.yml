@@ -1,10 +1,10 @@
 version: '3'
 
 services:
-  db:
-    build: ./db
-    volumes:
-      - ./volumes/postgres:/var/lib/postgresql/data
+#  db:
+#    build: ./db
+#    volumes:
+#      - ./volumes/postgres:/var/lib/postgresql/data
   web:
     build: .
     image: kedja_django
@@ -14,8 +14,9 @@ services:
     volumes:
       - ./src:/app/src
       - ./etc:/app/etc
+      - ./var:/app/var
       - ./volumes/media:/app/media
     ports:
       - "8000:8000"
-    depends_on:
-      - db
+#    depends_on:
+#      - db
