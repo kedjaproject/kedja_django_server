@@ -1,0 +1,15 @@
+- model: core.UserRole
+  pk: 1
+  fields:
+    title: Wall owner
+    description: The one with the power
+- model: core.UserRole
+  pk: 2
+  fields:
+    title: Contributor
+    description: Doing stuff too
+- model: core.UserRole
+  pk: 3
+  fields:
+    title: Guest
+    description: Don't touch the buttons

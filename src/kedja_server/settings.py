@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core',
+    'walls',
 ]
 
 MIDDLEWARE = [
@@ -131,11 +133,14 @@ class ConfigLoader:
                     setattr(self.module, key, value)
 
     def load_dir(self, dir_name):
+        # What happens with walk when the directory doesn't exist.
         for (dir_path, dirs, files) in os.walk(dir_name):
             for filename in files:
                 self.load_file(os.path.join(dir_path, filename))
 
 
 loader = ConfigLoader(sys.modules[__name__])
-loader.load_dir('/app/etc/settings')
-loader.load_dir('/app/etc/settings.local')
+loader.load_dir('../etc/settings')
+loader.load_dir('../etc/settings.local')
+#loader.load_dir('/app/etc/settings')
+#loader.load_dir('/app/etc/settings.local')
