@@ -14,6 +14,7 @@ class WALL_ROLES:
 class Wall(models.Model):
     title = models.CharField('Title', max_length=200)
     description = models.TextField('Description', blank=True)
+    public = models.BooleanField('Public', default=False)
 
     class Meta:
         ordering = ['title']
