@@ -13,7 +13,6 @@ class WALL_ROLES:
 
 class Wall(models.Model):
     title = models.CharField('Title', max_length=200)
-#    slug = models.SlugField(help_text='Undvik att ändra detta, eftersom det påverkar webbadressen', unique=True)
     description = models.TextField('Description', blank=True)
 
     class Meta:
@@ -50,6 +49,7 @@ class Card(models.Model):
     )
     title = models.CharField('Title', max_length=200)
     collection = models.ForeignKey(Collection, on_delete=models.CASCADE)
+    wall = models.ForeignKey(Wall, on_delete=models.CASCADE)
     relations = models.ManyToManyField(
         RECURSIVE_RELATIONSHIP_CONSTANT, verbose_name='Relations',
         # related_name='xxx_%(app_label)s_%(class)s_set',
