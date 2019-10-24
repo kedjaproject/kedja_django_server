@@ -3,10 +3,10 @@ from django import forms
 from walls import models
 
 
-class MembershipForm(forms.ModelForm):
+class RoleForm(forms.ModelForm):
 
     class Meta:
-        model = models.WallMembership
+        model = models.WallRole
         widgets = {
             'roles': forms.CheckboxSelectMultiple()
         }

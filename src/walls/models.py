@@ -8,16 +8,7 @@ from core.models import UserRole
 class Wall(models.Model):
     title = models.CharField('Title', max_length=200)
 #    slug = models.SlugField(help_text='Undvik att ändra detta, eftersom det påverkar webbadressen', unique=True)
-    description = models.TextField('Description')
-    membership = models.ManyToManyField(User, through='WallMembership')
-
-    # owner = models.ForeignKey(User, on_delete=models.PROTECT, blank=True)
-    # contributors = models.ManyToManyField(
-    #     User, verbose_name='Contributors',
-    #     blank=True)
-    # guests = models.ManyToManyField(
-    #     User, verbose_name='Guests',
-    #     blank=True)
+    description = models.TextField('Description', blank=True)
 
     class Meta:
         ordering = ['title']
@@ -26,9 +17,9 @@ class Wall(models.Model):
         return self.title
 
 
-class WallMembership(models.Model):
+class WallRole(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    wall = models.ForeignKey(Wall, on_delete=models.CASCADE)
+    wall = models.ForeignKey(Wall, on_delete=models.CASCADE, related_name='roles')
     roles = models.ManyToManyField(UserRole)
 
 
