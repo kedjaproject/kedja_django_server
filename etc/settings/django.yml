@@ -1,6 +1,8 @@
 DATABASES:
   default:
-    ENGINE: django.db.backends.postgresql
-    NAME: postgres
-    USER: postgres
-    HOST: db
+#    ENGINE: django.db.backends.postgresql
+#    NAME: postgres
+#    USER: postgres
+#    HOST: db
+    ENGINE: 'django.db.backends.sqlite3'
+    NAME: '../var/sqlite.db'
