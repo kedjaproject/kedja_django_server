@@ -18,18 +18,18 @@ from rest_framework import routers
 
 # Routers provide an easy way of automatically determining the URL conf.
 from .apps import WallsConfig
-from .views import WallViewSet
+from . import views
 
 app_name = WallsConfig.name
 
 
 router = routers.DefaultRouter()
-#router.register(r'users', UserViewSet)
-router.register(r'walls', WallViewSet)
+router.register(r'walls', views.WallListView)
+router.register(r'walls', views.WallDetailView)
+router.register(r'walls', views.WallUpdateDeleteView)
 
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = router.urls
-    #url(r'^', include(router.urls)),
 
