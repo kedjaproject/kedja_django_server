@@ -6,3 +6,4 @@ DATABASES:
 #    HOST: db
     ENGINE: 'django.db.backends.sqlite3'
     NAME: '../var/sqlite.db'
+ATOMIC_REQUESTS: True  # Test this using postgres!
