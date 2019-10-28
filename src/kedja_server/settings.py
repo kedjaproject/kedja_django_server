@@ -29,7 +29,7 @@ SECRET_KEY = 'not-in-repo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DEBUG'))
 
-ALLOWED_HOSTS = ['localhost', '0.0.0.0']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 
 # Application definition
